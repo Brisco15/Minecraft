@@ -1,0 +1,14 @@
+mixin listMenu(arr)
+  ul
+    each item in arr
+      li
+        a(href="#")=item.title
+        -if(item.list)
+          +listMenu(item.list)
+mixin article(item)
+  .article
+    .article__top
+      .article__date #{item.date}
+      .article__text #{item.text}
+    .article__img 
+      img(src=item.img alt="")   

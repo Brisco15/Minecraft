@@ -1,0 +1,38 @@
+doctype html
+html(lang="uk")
+  include partials/head
+  body
+    include partials/header
+    .wrapper
+      .row
+        .column-laptop-1-4
+          include partials/side-menu
+        .column-laptop-3-4
+          include partials/content-text
+          -
+            var articles = [
+            {
+              date: '2016-04-17',
+              text: 'Страж подводной крепости довольно сильный противник для начинащ',
+              img: 'img/mn1.jpg'
+            },
+             {
+              date: '2016-06-27',
+              text: 'Встречайте: белые медведи в холодных биомах!',
+              img: 'img/mn2.jpg'
+            },
+             {
+              date: '2016-08-04',
+              text: 'В мобильной версии теперь можно приручить кролика, он станет ве',
+              img: 'img/mn3.jpg'
+            }
+
+            ]
+          .row
+            each item in articles
+              .column-laptop-1-3.m-b-20
+                +article(item)
+
+    include partials/footer
+
+    

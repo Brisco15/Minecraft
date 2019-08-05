@@ -1,0 +1,35 @@
+@function number ($string)
+  $check: '0','1','2','3','4','5','6','7','9'
+  $i: 0
+  @each $item in $check
+    @if $item == $string
+      @return $i
+    $i: $i+1
+  @return $i
+
+
+
+
+@mixin propToRem($prop, $px)
+  #{$prop} : $px/16*1rem
+@mixin breakpoint($point) 
+  @if $point == desktop
+    @media (min-width: 70em)  
+      @content 
+  @else if $point == laptop 
+    @media (min-width: 64em)  
+      @content 
+
+  @else if $point == tablet 
+    @media (min-width: 50em)  
+      @content  
+
+  @else if $point == phablet      
+    @media (min-width: 37.5em)  
+      @content 
+
+  @else if $point == mobileonly 
+    @media (max-width: 37.5em)   
+      @content  
+ 
+  

@@ -1,0 +1,40 @@
+.header
+  .header__top
+    .wrapper
+      div Подключайся и играй на наших серверах
+      .icon-menu
+        a(href="#")
+          .sprite.sprite-icon-fb
+        a(href="#")
+          .sprite.sprite-icon-vk
+        a(href="#")
+          .sprite.sprite-icon-en-lang
+  .wrapper
+    .row
+      .header__column.header__column_logo
+        a.logo(href="#")
+          img(src="img/minecraft-logo.png" alt="")
+      .header__column.header__column_contacts
+        .contacts
+          include phone-list
+          |Skype: #[a(href="skype:minecraft-km7") minecraft-km7]
+      .header__column.header__column_bts
+        a.button(href="#") some text
+        a.button(href="#") another text
+      .header__column.header__column_img
+        img(src="img/minecraft-logo2.png" alt="")
+  .header__menu
+    .wrapper
+      ul
+        -
+         var menu = [
+            'menu',
+            'об игри',
+            'наша команда',
+            'список серверов',
+            'донат'
+          ];
+        each item, index in menu
+          li(class=index==0?'active':'')
+            a(href="#")=item
+
